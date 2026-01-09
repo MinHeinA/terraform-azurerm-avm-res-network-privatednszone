@@ -8,14 +8,11 @@ resource "azapi_resource" "private_dns_zone" {
   delete_headers = var.enable_telemetry ? { "User-Agent" : local.avm_azapi_header } : null
   read_headers   = var.enable_telemetry ? { "User-Agent" : local.avm_azapi_header } : null
   response_export_values = {
-    "id"                                          = "id"
-    "name"                                        = "name"
-    "type"                                        = "type"
-    "location"                                    = "location"
-    "tags"                                        = "tags"
-    "numberOfRecordSets"                          = "properties.numberOfRecordSets"
-    "numberOfVirtualNetworkLinks"                 = "properties.numberOfVirtualNetworkLinks"
-    "numberOfVirtualNetworkLinksWithRegistration" = "properties.numberOfVirtualNetworkLinksWithRegistration"
+    "id"       = "id"
+    "name"     = "name"
+    "type"     = "type"
+    "location" = "location"
+    "tags"     = "tags"
   }
   retry          = var.retry
   tags           = var.tags
